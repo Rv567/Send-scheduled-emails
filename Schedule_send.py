@@ -18,10 +18,10 @@ def my_scheduled_function():
                                         smtp_server='smtp.gmail.com',
                                         smtp_port=587,
                                         app_password='foicfxiwfxwirtjb')
-    st.write(f"Email sent at : {datetime.now()}")
+    #st.write(f"Email sent at : {datetime.now()}")
    
 
-schedule.every(1).minute.do(my_scheduled_function)
+schedule.every(1).minutes.do(my_scheduled_function)
 
 # Function to run the scheduler
 def run_scheduler():
