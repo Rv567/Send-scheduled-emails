@@ -27,7 +27,7 @@ def run_scheduler():
         time.sleep(1)
 
 # Schedule the function
-schedule.every(1).minutes.do(my_scheduled_function)
+schedule.every(1).minute.do(my_scheduled_function)
 
 # Run the scheduler in a separate thread
 scheduler_thread = threading.Thread(target=run_scheduler, daemon=True)
