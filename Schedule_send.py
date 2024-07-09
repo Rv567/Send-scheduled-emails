@@ -20,19 +20,21 @@ def my_scheduled_function():
                app_password='foicfxiwfxwirtjb')
     st.write(f"Email sent at : {datetime.now()}")
 
+# Schedule the function
+schedule.every(1).minutes.do(my_scheduled_function)
+
 # Function to run the scheduler
 def run_scheduler():
     while True:
         schedule.run_pending()
         time.sleep(1)
 
-# Schedule the function
-schedule.every(1).minute.do(my_scheduled_function)
-
-# Run the scheduler in a separate thread
-scheduler_thread = threading.Thread(target=run_scheduler, daemon=True)
+# Start the scheduler in a separate thread
+scheduler_thread = threading.Thread(target=run_scheduler)
 scheduler_thread.start()
 
-# Streamlit loop to keep the app running
-while True:
-    time.sleep(1)
+# To keep Streamlit app responsive and running
+if 'initialized' not in st.session_state:
+    st.session_state.initialized = True
+
+st.write("Scheduler is running in the background.")
