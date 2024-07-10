@@ -10,7 +10,7 @@ st.title("My Streamlit App with Scheduler")
 st.write("The function will send emails every 1 minute")
 
 # Your function to be scheduled
-def my_scheduled_function():
+#def my_scheduled_function():
     send_email(sender_email="rachid.chentouf71@gmail.com",
                                         receiver_email="rachid.axiom@gmail.com",
                                         subject='Test Email',
