@@ -21,7 +21,7 @@ def my_scheduled_function():
     #st.write(f"Email sent at : {datetime.now()}")
    
 
-schedule.every(1).minutes.do(my_scheduled_function)
+#schedule.every(1).minutes.do(my_scheduled_function)
 
 # Function to run the scheduler
 def run_scheduler():
